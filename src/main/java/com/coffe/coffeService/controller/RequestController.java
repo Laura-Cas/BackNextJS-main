@@ -333,11 +333,8 @@ public class RequestController {
             return ResponseEntity.ok(Collections.emptyList());
         }
     }
-    
-    @GetMapping("/saludo")
-    public ResponseEntity<?> saludo(){
-        return ResponseEntity.ok("saludo desde el backend");
-    }
+
+  
 
     @DeleteMapping("/deleteSeguimiento/{id}")
     public ResponseEntity<Object> deleteSeguimiento(@PathVariable Long id) {
