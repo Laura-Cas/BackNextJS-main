@@ -226,6 +226,8 @@ public class FincaService {
     public boolean eliminarPlanificacion(Long id) {
         Optional<Planificacion> planificacionOptional = planificacionRepository.findById(id);
         if (planificacionOptional.isPresent()) {
+            // Primero, elimina los seguimientos asociados
+            seguimientoRepository.deleteByPlanificacionId(id);
             planificacionRepository.deleteById(id);
             return true;
         } else {
